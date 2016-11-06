@@ -5,6 +5,7 @@ public class BSPTreeObject : MonoBehaviour
 {
     public BSPTree tree;
 
+    public Material[] defaultMaterial;
 	// Use this for initialization
 	void Start () {
 	
