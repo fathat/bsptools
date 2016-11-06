@@ -33,8 +33,8 @@ public class SplitPolygonTest : MonoBehaviour
         
         var plane = new Plane(splitPlane.up, splitPlane.transform.position);
         //DrawPolygon(vertices);
-        var polygon = new BSPTree.Polygon(vertices);
-        var polygons = BSPTree.SplitPolygon(polygon, plane);
+        var polygon = new SolidLeafBSPTree.Polygon(vertices);
+        var polygons = SolidLeafBSPTree.SplitPolygon(polygon, plane);
 
         var colors = new[]
         {
@@ -45,7 +45,7 @@ public class SplitPolygonTest : MonoBehaviour
         foreach (var poly in polygons)
         {
             Gizmos.color = colors[c];
-            DrawPolygon(poly.vertices.ToArray());
+            DrawPolygon(poly.Vertices.ToArray());
             c++;
             if (c > colors.Length) c = 0;
         }
